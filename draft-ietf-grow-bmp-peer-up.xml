@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="US-ASCII"?>
+<!-- This template is for creating an Internet Draft using xml2rfc,
+    which is available here: http://xml.resource.org. -->
+<!DOCTYPE rfc SYSTEM "rfc2629.dtd" [
+]>
+
+<?xml-stylesheet type='text/xsl' href='rfc2629.xslt' ?>
+<!-- used by XSLT processors -->
+<!-- For a complete list and description of processing instructions (PIs),
+    please see http://xml.resource.org/authoring/README.html. -->
+<!-- Below are generally applicable Processing Instructions (PIs) that
+    most I-Ds might want to use.
+    (Here they are set differently than their defaults in xml2rfc v1.32) -->
+<?rfc strict="yes" ?>
+<!-- give errors regarding ID-nits and DTD validation -->
+<!-- control the table of contents (ToC) -->
+<?rfc toc="yes"?>
+<!-- generate a ToC -->
+<?rfc tocdepth="4"?>
+<!-- the number of levels of subsections in ToC. default: 3 -->
+<!-- control references -->
+<?rfc symrefs="yes"?>
+<!-- use symbolic references tags, i.e, [RFC2119] instead of [1] -->
+<?rfc sortrefs="yes" ?>
+<!-- sort the reference entries alphabetically -->
+<!-- control vertical white space
+    (using these PIs as follows is recommended by the RFC Editor) -->
+<?rfc compact="yes" ?>
+<!-- do not start each main section on a new page -->
+<?rfc subcompact="no" ?>
+<!-- keep one blank line between list items -->
+<!-- end of list of popular I-D processing instructions -->
+<rfc category="std" docName="draft-ietf-grow-bmp-peer-up-00"
+ipr="trust200902" updates="7854" consensus="true">
+  <!-- category values: std, bcp, info, exp, and historic
+    ipr values: full3667, noModification3667, noDerivatives3667
+    you can add the attributes updates="NNNN" and obsoletes="NNNN"
+    they will automatically be output with "(if approved)" -->
+
+  <!-- ***** FRONT MATTER ***** -->
+
+  <front>
+
+    <title abbrev="BMP Peer Up Namespace">
+    BMP Peer Up Message Namespace</title>
+
+    <!-- add 'role="editor"' below for the editors if appropriate -->
+
+    <!-- Another author who claims to be an editor -->
+
+    <author fullname="John Scudder" initials="J.S."
+            surname="Scudder">
+      <organization>Juniper Networks</organization>
+
+      <address>
+        <postal>
+          <street>1194 N. Mathilda Ave</street>
+
+          <!-- Reorder these if your country does things differently -->
+
+          <city>Sunnyvale</city>
+
+          <region>CA</region>
+
+          <code>94089</code>
+
+          <country>USA</country>
+        </postal>
+
+        <email>jgs@juniper.net</email>
+
+        <!-- uri and facsimile elements may also be added -->
+      </address>
+    </author>
+
+    <date year="2023" />
+
+    <!-- Meta-data Declarations -->
+
+    <area>General</area>
+
+    <workgroup>GROW</workgroup>
+
+    <keyword>IDR</keyword>
+    <keyword>GROW</keyword>
+    <keyword>BGP</keyword>
+    <keyword>BMP</keyword>
+
+<abstract>
+<t>
+	RFC 7854, BMP, uses different message types for different purposes.
+	Most of these are Type, Length, Value (TLV) structured. One message
+	type, the Peer Up message, lacks a set of TLVs defined for its use,
+	instead sharing a namespace with the Initiation message. Subsequent
+	experience has shown that this namespace sharing was a mistake, as it
+	hampers the extension of the protocol.
+</t>
+<t>
+	This document updates RFC 7854 by creating an independent namespace for
+	the Peer Up message. The changes in this document are formal only,
+	compliant implementations of RFC 7854 also comply with this specification.
+</t>
+</abstract>
+
+  </front>
+
+  <middle>
+
+<section anchor="introduction" title="Introduction">
+<t>
+	<xref target="RFC7854"/> defines a number of different BMP message
+	types. With the exception of the Route Monitoring message type, these
+	messages are TLV-structured. Most message types have distinct
+	namespaces and IANA registries. However, the namespace of the Peer Up
+	message overlaps that of the Initiation message. As the BMP protocol
+	has been extended, this oversight has become problematic. In this
+	document, we create a distinct namespace for the Peer Up message to
+	eliminate this overlap, and create the corresponding missing registry. 
+</t>
+	<!--We also supply a definition of "string" for 
+	convenience, since TLVs from multiple different registries include a string. -->
+<t>
+    The changes in this document are formal only, compliant implementations
+    of <xref target="RFC7854"/> also comply with this specification.
+</t>
+      <section title="Requirements Language">
+        <t>The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL
+        NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED",
+        "MAY", and "OPTIONAL" in this document are to be interpreted as
+        described in BCP 14 <xref target="RFC2119"/> <xref
+        target="RFC8174"/> when, and only when, they appear in all
+        capitals, as shown here.</t>
+      </section>
+
+</section>
+
+<section anchor="string" title="String Definition">
+<t>
+    A string TLV is a free-form sequence of UTF-8 characters whose length
+    is given by the TLV's Length field.  There is no requirement to
+    terminate the string with a null (or any other particular) character --
+    the Length field gives its termination.  
+</t>
+</section>
+
+<section title="Changes to RFC 7854">
+<t>
+    We update <xref target="RFC7854"/> as follows:
+    <list style="symbols">
+    <t>
+    	The "Information TLV" of section 4.4, that was shared between the
+    	Initiation and Peer Up message types, is renamed as the "Initiation
+    	Information TLV", and is only relevant to the 
+    	Initiation message type.
+    </t>
+    <t>
+    	A "Peer Up Information TLV" is defined, and is relevant to the
+    	Peer Up message type.
+    </t>
+    <t>
+		A "Peer Up TLVs" registry is created, seeded with the Peer Up
+		Information TLV.
+	</t>
+	</list> 
+	Other than as summarized above, and detailed below, there are no
+	other changes.
+</t>
+
+<section anchor="init_info_tlv"
+         title="Revision to Information TLV, Renamed as Initiation Information TLV">
+<t>
+	The Information TLV defined in section 4.4 of <xref target="RFC7854"/>
+	is renamed "Initiation Information TLV". It is used only by the 
+	Initiation message, not by the Peer Up message.
+</t>
+<t>
+	The definition of Type = 0 is revised to be:
+	<list style="symbols">
+	<t>
+		Type = 0: String.  The Information field contains a <xref
+		target="string">string</xref>.  The value is administratively
+		assigned.  If multiple strings are included, their ordering MUST be
+		preserved when they are reported.
+	</t>
+	</list>
+</t>
+</section>
+
+<section title="Revision to Peer Up Notification">
+<t>
+    The final paragraph of section 4.10 of <xref target="RFC7854"/>
+    references the Information TLV (which is revised <xref
+    target="init_info_tlv">above</xref>). That paragraph is replaced by
+    the following:
+	<list style="symbols">
+	<t>
+		Information: Information about the peer, using the Peer Up
+		Information TLV format defined <xref
+		target="peer_up_info_tlv">below</xref>.  The String type may be
+		repeated.  Inclusion of the Information field is OPTIONAL.  Its
+		presence or absence can be inferred by inspection of the Message
+		Length in the common header.
+	</t>
+	</list>
+</t>
+</section>
+
+<section anchor="peer_up_info_tlv"
+         title="Definition of Peer Up Information TLV">
+<t>
+	The Peer Up Information TLV is used by the Peer Up message.
+</t>
+      <figure align="center">
+        <artwork align="center"><![CDATA[
+0 1 2 3 4 5 6 7 8 1 2 3 4 5 6 7 8 1 2 3 4 5 6 7 8 1 2 3 4 5 6 7 8
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+|          Information Type     |       Information Length      |
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+|                 Information (variable)                        |
+~                                                               ~
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+            ]]></artwork>
+      </figure>
+<t>
+<list style="symbols">
+<t>
+	 Information Type (2 bytes): Type of information provided.
+	 Defined types are:
+<list style="symbols">
+<t>
+	 Type = 0: String.  The Information field contains a <xref
+	 target="string">string</xref>.  The value is administratively
+	 assigned.  If multiple strings are included, their ordering MUST be
+	 preserved when they are reported.
+</t>
+</list>
+</t>
+<t>
+      Information Length (2 bytes): The length of the following
+      Information field, in bytes.
+</t>
+<t>
+      Information (variable): Information about the monitored
+      router, according to the type.
+</t>
+</list>
+</t>
+</section>
+</section>
+
+<section anchor="IANA" title="IANA Considerations">
+<t>
+	IANA is requested to create a registry within the BMP
+	group, named "BMP Peer Up Message TLVs", reference this
+	document. 
+</t>
+<t>
+	Registration procedures for this registry are:
+</t>
+<texttable>
+	<ttcol align='center'>Range</ttcol>
+	<ttcol align='center'>Registration Procedures</ttcol>
+	
+	<c>0-32767</c>
+	<c>Standards Action</c>
+	<c>32768-65530</c>
+	<c>First Come, First Served</c>
+	<c>65531-65534</c>
+	<c>Experimental</c>
+	<c>65535</c>
+	<c>Reserved</c>
+</texttable>
+<t>
+	Initial values for this registry are:
+</t>
+<texttable>
+	<ttcol align='center'>Type</ttcol>
+	<ttcol align='center'>Description</ttcol>
+	<ttcol align='center'>Reference</ttcol>
+
+	<c>0</c>
+	<c>String</c>
+	<c>this document</c>
+	
+	<c>65535</c>
+	<c>Reserved</c>
+	<c>this document</c>
+</texttable>
+</section>
+
+<section anchor="Security" title="Security Considerations">
+<t>
+	This rearrangement of deck chairs does not change the
+	underlying security issues inherent in the existing <xref
+	target="RFC7854"/>.
+</t>
+</section>
+
+<section anchor="Acknowledgements" title="Acknowledgements">
+<t>
+	TBD
+</t>
+</section>
+
+  </middle>
+
+  <!--  *****BACK MATTER ***** -->
+
+  <back>
+    <references title="Normative References">
+      <!--?rfc include=
+      "http://xml.resource.org/public/rfc/bibxml/reference.RFC.2119.xml"?-->
+      
+      <?rfc include="reference.RFC.2119.xml"?>
+	  <?rfc include="reference.RFC.7854.xml"?>
+	  <?rfc include="reference.RFC.8174.xml"?>
+<!--	  <?rfc include="reference.RFC.8126.xml"?> -->
+    </references>
+    
+  </back>
+</rfc>
