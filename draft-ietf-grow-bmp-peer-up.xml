@@ -31,7 +31,7 @@
 <!-- keep one blank line between list items -->
 <!-- end of list of popular I-D processing instructions -->
 <rfc category="std" docName="draft-ietf-grow-bmp-peer-up-01"
-ipr="trust200902" updates="7854" consensus="true">
+ipr="trust200902" updates="7854, 8671, 9069" consensus="true">
   <!-- category values: std, bcp, info, exp, and historic
     ipr values: full3667, noModification3667, noDerivatives3667
     you can add the attributes updates="NNNN" and obsoletes="NNNN"
@@ -111,8 +111,10 @@ ipr="trust200902" updates="7854" consensus="true">
 </t>
 <t>
 	This document updates RFC 7854 by creating an independent namespace for
-	the Peer Up message. The changes in this document are formal only,
-	compliant implementations of RFC 7854 also comply with this specification.
+	the Peer Up message. It also updates RFC 8671 and RFC 9069 by moving the
+	defined codepoints in the newly introduced registry. The changes in this
+	document are formal only, compliant implementations of RFC 7854, RFC 8671
+	and RFC 9069 also comply with this specification.
 </t>
 </abstract>
 
@@ -135,7 +137,8 @@ ipr="trust200902" updates="7854" consensus="true">
 	convenience, since TLVs from multiple different registries include a string. -->
 <t>
     The changes in this document are formal only, compliant implementations
-    of <xref target="RFC7854"/> also comply with this specification.
+    of <xref target="RFC7854"/>, <xref target="RFC8671"/> and <xref target="RFC9069"/>
+    also comply with this specification.
 </t>
       <section title="Requirements Language">
         <t>The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL
@@ -157,7 +160,7 @@ ipr="trust200902" updates="7854" consensus="true">
 </t>
 </section>
 
-<section title="Changes to RFC 7854">
+<section title="Changes to existing RFCs">
 <t>
     We update <xref target="RFC7854"/> as follows:
     <list style="symbols">
@@ -195,6 +198,18 @@ ipr="trust200902" updates="7854" consensus="true">
 		target="string">string</xref>.  The value is administratively
 		assigned.  If multiple strings are included, their ordering MUST be
 		preserved when they are reported.
+	</t>
+
+	<t>
+		Type = 1: sysDescr.  The Information field contains an ASCII
+		string whose value MUST be set to be equal to the value of the
+		sysDescr MIB-II <xref target="RFC1213"/> object.
+	</t>
+
+	<t>
+		Type = 2: sysName.  The Information field contains an ASCII
+		string whose value MUST be set to be equal to the value of the
+		sysName MIB-II <xref target="RFC1213"/> object.
 	</t>
 	</list>
 </t>
@@ -247,6 +262,19 @@ ipr="trust200902" updates="7854" consensus="true">
 	 assigned.  If multiple strings are included, their ordering MUST be
 	 preserved when they are reported.
 </t>
+<t>
+	Type = 3: VRF/Table Name. The Information field contains a UTF-8
+	string whose value MUST be equal to the value of the VRF or table
+	name (e.g., RD instance name) being conveyed. The string size MUST
+	be within the range of 1 to 255 bytes.
+</t>
+<t>
+	Type = 4: Admin Label.  The Information field contains a free-form
+	UTF-8 string whose byte length is given by the Information Length
+	field.  The value is administratively assigned.  There is no
+	requirement to terminate the string with null or any other
+	character.
+</t>
 </list>
 </t>
 <t>
@@ -295,6 +323,14 @@ ipr="trust200902" updates="7854" consensus="true">
 	<c>0</c>
 	<c>String</c>
 	<c>this document</c>
+
+	<c>3</c>
+	<c>VRF/Table Name</c>
+	<c>this document</c>
+
+	<c>4</c>
+	<c>Admin Label</c>
+	<c>this document</c>
 	
 	<c>65535</c>
 	<c>Reserved</c>
@@ -326,7 +362,10 @@ ipr="trust200902" updates="7854" consensus="true">
       "http://xml.resource.org/public/rfc/bibxml/reference.RFC.2119.xml"?-->
       
       <?rfc include="reference.RFC.2119.xml"?>
+	  <?rfc include="reference.RFC.1213.xml"?>
 	  <?rfc include="reference.RFC.7854.xml"?>
+	  <?rfc include="reference.RFC.8671.xml"?>
+	  <?rfc include="reference.RFC.9069.xml"?>
 	  <?rfc include="reference.RFC.8174.xml"?>
 <!--	  <?rfc include="reference.RFC.8126.xml"?> -->
     </references>
