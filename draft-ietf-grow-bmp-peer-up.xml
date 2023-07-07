@@ -73,6 +73,20 @@ ipr="trust200902" updates="7854" consensus="true">
       </address>
     </author>
 
+    <author fullname="Paolo Lucente" initials="P" surname="Lucente">
+      <organization>NTT</organization>
+      <address>
+        <postal>
+          <street>Veemweg 23</street>
+          <city>Barneveld</city>
+          <code>3771</code>
+          <region>MT</region>
+          <country>NL</country>
+        </postal>
+        <email>paolo@ntt.net</email>
+      </address>
+    </author>
+
     <date year="2023" />
 
     <!-- Meta-data Declarations -->
