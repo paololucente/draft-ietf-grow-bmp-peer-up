@@ -303,13 +303,13 @@ ipr="trust200902" updates="7854, 8671, 9069" consensus="true">
 	<ttcol align='center'>Range</ttcol>
 	<ttcol align='center'>Registration Procedures</ttcol>
 	
-	<c>0-32767</c>
+	<c>0, 3-32767</c>
 	<c>Standards Action</c>
 	<c>32768-65530</c>
 	<c>First Come, First Served</c>
 	<c>65531-65534</c>
 	<c>Experimental</c>
-	<c>65535</c>
+	<c>1-2, 65535</c>
 	<c>Reserved</c>
 </texttable>
 <t>
@@ -324,12 +324,53 @@ ipr="trust200902" updates="7854, 8671, 9069" consensus="true">
 	<c>String</c>
 	<c>this document</c>
 
+	<c>1</c>
+	<c>Reserved</c>
+	<c>this document</c>
+
+	<c>2</c>
+	<c>Reserved</c>
+	<c>this document</c>
+
 	<c>3</c>
 	<c>VRF/Table Name</c>
 	<c>this document</c>
 
 	<c>4</c>
 	<c>Admin Label</c>
+	<c>this document</c>
+	
+	<c>65535</c>
+	<c>Reserved</c>
+	<c>this document</c>
+</texttable>
+<t>
+	IANA is also requested to seed the "BMP Initiation
+        Information TLVs" registry with the following values:
+</t>
+<texttable>
+	<ttcol align='center'>Type</ttcol>
+	<ttcol align='center'>Description</ttcol>
+	<ttcol align='center'>Reference</ttcol>
+
+	<c>0</c>
+	<c>String</c>
+	<c>this document</c>
+
+	<c>1</c>
+	<c>sysDescr</c>
+	<c>this document</c>
+
+	<c>2</c>
+	<c>sysName</c>
+	<c>this document</c>
+
+	<c>3</c>
+	<c>Reserved</c>
+	<c>this document</c>
+
+	<c>4</c>
+	<c>Reserved</c>
 	<c>this document</c>
 	
 	<c>65535</c>

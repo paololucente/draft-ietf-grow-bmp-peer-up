@@ -78,10 +78,10 @@ Table of Contents
      3.2.  Revision to Peer Up Notification  . . . . . . . . . . . .   4
      3.3.  Definition of Peer Up Information TLV . . . . . . . . . .   4
    4.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .   5
-   5.  Security Considerations . . . . . . . . . . . . . . . . . . .   5
-   6.  Acknowledgements  . . . . . . . . . . . . . . . . . . . . . .   5
-   7.  Normative References  . . . . . . . . . . . . . . . . . . . .   5
-   Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .   6
+   5.  Security Considerations . . . . . . . . . . . . . . . . . . .   6
+   6.  Acknowledgements  . . . . . . . . . . . . . . . . . . . . . .   6
+   7.  Normative References  . . . . . . . . . . . . . . . . . . . .   6
+   Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .   7
 
 1.  Introduction
 
@@ -236,13 +236,13 @@ Internet-Draft            BMP Peer Up Namespace                July 2023
                 +=============+==========================+
                 |    Range    | Registration Procedures  |
                 +=============+==========================+
-                |   0-32767   |     Standards Action     |
+                |  0, 3-32767 |     Standards Action     |
                 +-------------+--------------------------+
                 | 32768-65530 | First Come, First Served |
                 +-------------+--------------------------+
                 | 65531-65534 |       Experimental       |
                 +-------------+--------------------------+
-                |    65535    |         Reserved         |
+                |  1-2, 65535 |         Reserved         |
                 +-------------+--------------------------+
 
                                  Table 1
@@ -254,6 +254,10 @@ Internet-Draft            BMP Peer Up Namespace                July 2023
                 +=======+================+===============+
                 |   0   |     String     | this document |
                 +-------+----------------+---------------+
+                |   1   |    Reserved    | this document |
+                +-------+----------------+---------------+
+                |   2   |    Reserved    | this document |
+                +-------+----------------+---------------+
                 |   3   | VRF/Table Name | this document |
                 +-------+----------------+---------------+
                 |   4   |  Admin Label   | this document |
@@ -262,6 +266,39 @@ Internet-Draft            BMP Peer Up Namespace                July 2023
                 +-------+----------------+---------------+
 
                                  Table 2
+
+   IANA is also requested to seed the "BMP Initiation Information TLVs"
+   registry with the following values:
+
+
+
+
+
+
+
+
+Scudder & Lucente        Expires 29 January 2024                [Page 5]
+
+Internet-Draft            BMP Peer Up Namespace                July 2023
+
+
+                  +=======+=============+===============+
+                  |  Type | Description |   Reference   |
+                  +=======+=============+===============+
+                  |   0   |    String   | this document |
+                  +-------+-------------+---------------+
+                  |   1   |   sysDescr  | this document |
+                  +-------+-------------+---------------+
+                  |   2   |   sysName   | this document |
+                  +-------+-------------+---------------+
+                  |   3   |   Reserved  | this document |
+                  +-------+-------------+---------------+
+                  |   4   |   Reserved  | this document |
+                  +-------+-------------+---------------+
+                  | 65535 |   Reserved  | this document |
+                  +-------+-------------+---------------+
+
+                                  Table 3
 
 5.  Security Considerations
 
@@ -273,14 +310,6 @@ Internet-Draft            BMP Peer Up Namespace                July 2023
    TBD
 
 7.  Normative References
-
-
-
-
-Scudder & Lucente        Expires 29 January 2024                [Page 5]
-
-Internet-Draft            BMP Peer Up Namespace                July 2023
-
 
    [RFC1213]  McCloghrie, K. and M. Rose, "Management Information Base
               for Network Management of TCP/IP-based internets: MIB-II",
@@ -300,6 +329,14 @@ Internet-Draft            BMP Peer Up Namespace                July 2023
    [RFC8174]  Leiba, B., "Ambiguity of Uppercase vs Lowercase in RFC
               2119 Key Words", BCP 14, RFC 8174, DOI 10.17487/RFC8174,
               May 2017, <https://www.rfc-editor.org/info/rfc8174>.
+
+
+
+
+Scudder & Lucente        Expires 29 January 2024                [Page 6]
+
+Internet-Draft            BMP Peer Up Namespace                July 2023
+
 
    [RFC8671]  Evens, T., Bayraktar, S., Lucente, P., Mi, P., and S.
               Zhuang, "Support for Adj-RIB-Out in the BGP Monitoring
@@ -333,4 +370,23 @@ Authors' Addresses
 
 
 
-Scudder & Lucente        Expires 29 January 2024                [Page 6]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Scudder & Lucente        Expires 29 January 2024                [Page 7]
