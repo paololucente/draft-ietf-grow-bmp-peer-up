@@ -6,11 +6,11 @@ GROW                                                        J.S. Scudder
 Internet-Draft                                          Juniper Networks
 Updates: 7854, 8671, 9069 (if approved)                       P. Lucente
 Intended status: Standards Track                                     NTT
-Expires: 8 January 2024                                      7 July 2023
+Expires: 29 January 2024                                    28 July 2023
 
 
                      BMP Peer Up Message Namespace
-                     draft-ietf-grow-bmp-peer-up-01
+                     draft-ietf-grow-bmp-peer-up-02
 
 Abstract
 
@@ -43,7 +43,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 8 January 2024.
+   This Internet-Draft will expire on 29 January 2024.
 
 Copyright Notice
 
@@ -53,7 +53,7 @@ Copyright Notice
 
 
 
-Scudder & Lucente        Expires 8 January 2024                 [Page 1]
+Scudder & Lucente        Expires 29 January 2024                [Page 1]
 
 Internet-Draft            BMP Peer Up Namespace                July 2023
 
@@ -109,7 +109,7 @@ Table of Contents
 
 
 
-Scudder & Lucente        Expires 8 January 2024                 [Page 2]
+Scudder & Lucente        Expires 29 January 2024                [Page 2]
 
 Internet-Draft            BMP Peer Up Namespace                July 2023
 
@@ -165,7 +165,7 @@ Internet-Draft            BMP Peer Up Namespace                July 2023
 
 
 
-Scudder & Lucente        Expires 8 January 2024                 [Page 3]
+Scudder & Lucente        Expires 29 January 2024                [Page 3]
 
 Internet-Draft            BMP Peer Up Namespace                July 2023
 
@@ -221,7 +221,7 @@ Internet-Draft            BMP Peer Up Namespace                July 2023
 
 
 
-Scudder & Lucente        Expires 8 January 2024                 [Page 4]
+Scudder & Lucente        Expires 29 January 2024                [Page 4]
 
 Internet-Draft            BMP Peer Up Namespace                July 2023
 
@@ -277,7 +277,7 @@ Internet-Draft            BMP Peer Up Namespace                July 2023
 
 
 
-Scudder & Lucente        Expires 8 January 2024                 [Page 5]
+Scudder & Lucente        Expires 29 January 2024                [Page 5]
 
 Internet-Draft            BMP Peer Up Namespace                July 2023
 
@@ -333,4 +333,4 @@ Authors' Addresses
 
 
 
-Scudder & Lucente        Expires 8 January 2024                 [Page 6]
+Scudder & Lucente        Expires 29 January 2024                [Page 6]
