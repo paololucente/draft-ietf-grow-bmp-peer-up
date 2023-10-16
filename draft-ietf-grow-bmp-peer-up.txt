@@ -133,8 +133,8 @@ Internet-Draft            BMP Peer Up Namespace             October 2023
    *  A "Peer Up Information TLV" is defined, and is relevant to the
       Peer Up message type.
 
-   *  A "Peer Up TLVs" registry is created, seeded with the Peer Up
-      Information TLV.
+   *  A "BMP Peer Up Information TLVs" registry is is created, seeded
+      with the Peer Up Information TLV.
 
    Other than as summarized above, and detailed below, there are no
    other changes.
@@ -267,9 +267,9 @@ Internet-Draft            BMP Peer Up Namespace             October 2023
 
                                  Table 2
 
-   IANA is also requested to seed the "BMP Initiation Information TLVs"
-   registry with the following values:
-
+   IANA is also requested to rename the existing "BMP Initiation and
+   Peer Up Information TLVs" registry to "BMP Initiation Information
+   TLVs" and seed it with the following values:
 
 
 

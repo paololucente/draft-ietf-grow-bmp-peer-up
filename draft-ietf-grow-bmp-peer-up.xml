@@ -167,20 +167,19 @@ ipr="trust200902" updates="7854, 8671, 9069" consensus="true">
     <t>
     	The "Information TLV" of section 4.4, that was shared between the
     	Initiation and Peer Up message types, is renamed as the "Initiation
-    	Information TLV", and is only relevant to the 
-    	Initiation message type.
+    	Information TLV", and is only relevant to the Initiation message type.
     </t>
     <t>
     	A "Peer Up Information TLV" is defined, and is relevant to the
     	Peer Up message type.
     </t>
     <t>
-		A "Peer Up TLVs" registry is created, seeded with the Peer Up
-		Information TLV.
-	</t>
-	</list> 
-	Other than as summarized above, and detailed below, there are no
-	other changes.
+	A "BMP Peer Up Information TLVs" registry is is created, seeded
+	with the Peer Up Information TLV.
+    </t>
+    </list> 
+    Other than as summarized above, and detailed below, there are no
+    other changes.
 </t>
 
 <section anchor="init_info_tlv"
@@ -345,8 +344,9 @@ ipr="trust200902" updates="7854, 8671, 9069" consensus="true">
 	<c>this document</c>
 </texttable>
 <t>
-	IANA is also requested to seed the "BMP Initiation
-        Information TLVs" registry with the following values:
+	IANA is also requested to rename the existing "BMP Initiation
+	and Peer Up Information TLVs" registry to "BMP Initiation
+	Information TLVs" and seed it with the following values:
 </t>
 <texttable>
 	<ttcol align='center'>Type</ttcol>
