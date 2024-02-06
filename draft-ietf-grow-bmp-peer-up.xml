@@ -30,7 +30,7 @@
 <?rfc subcompact="no" ?>
 <!-- keep one blank line between list items -->
 <!-- end of list of popular I-D processing instructions -->
-<rfc category="std" docName="draft-ietf-grow-bmp-peer-up-02"
+<rfc category="std" docName="draft-ietf-grow-bmp-peer-up-03"
 ipr="trust200902" updates="7854, 8671, 9069" consensus="true">
   <!-- category values: std, bcp, info, exp, and historic
     ipr values: full3667, noModification3667, noDerivatives3667
@@ -87,7 +87,7 @@ ipr="trust200902" updates="7854, 8671, 9069" consensus="true">
       </address>
     </author>
 
-    <date year="2023" />
+    <date year="2024" />
 
     <!-- Meta-data Declarations -->
 

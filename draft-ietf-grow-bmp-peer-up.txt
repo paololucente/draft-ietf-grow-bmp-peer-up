@@ -6,11 +6,11 @@ GROW                                                        J.S. Scudder
 Internet-Draft                                          Juniper Networks
 Updates: 7854, 8671, 9069 (if approved)                       P. Lucente
 Intended status: Standards Track                                     NTT
-Expires: 26 April 2024                                   24 October 2023
+Expires: 9 August 2024                                   6 February 2024
 
 
                      BMP Peer Up Message Namespace
-                     draft-ietf-grow-bmp-peer-up-02
+                     draft-ietf-grow-bmp-peer-up-03
 
 Abstract
 
@@ -43,19 +43,19 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 26 April 2024.
+   This Internet-Draft will expire on 9 August 2024.
 
 Copyright Notice
 
-   Copyright (c) 2023 IETF Trust and the persons identified as the
+   Copyright (c) 2024 IETF Trust and the persons identified as the
    document authors.  All rights reserved.
 
 
 
 
-Scudder & Lucente         Expires 26 April 2024                 [Page 1]
+Scudder & Lucente         Expires 9 August 2024                 [Page 1]
 
-Internet-Draft            BMP Peer Up Namespace             October 2023
+Internet-Draft            BMP Peer Up Namespace            February 2024
 
 
    This document is subject to BCP 78 and the IETF Trust's Legal
@@ -109,9 +109,9 @@ Table of Contents
 
 
 
-Scudder & Lucente         Expires 26 April 2024                 [Page 2]
+Scudder & Lucente         Expires 9 August 2024                 [Page 2]
 
-Internet-Draft            BMP Peer Up Namespace             October 2023
+Internet-Draft            BMP Peer Up Namespace            February 2024
 
 
 2.  String Definition
@@ -165,9 +165,9 @@ Internet-Draft            BMP Peer Up Namespace             October 2023
 
 
 
-Scudder & Lucente         Expires 26 April 2024                 [Page 3]
+Scudder & Lucente         Expires 9 August 2024                 [Page 3]
 
-Internet-Draft            BMP Peer Up Namespace             October 2023
+Internet-Draft            BMP Peer Up Namespace            February 2024
 
 
 3.2.  Revision to Peer Up Notification
@@ -221,9 +221,9 @@ Internet-Draft            BMP Peer Up Namespace             October 2023
 
 
 
-Scudder & Lucente         Expires 26 April 2024                 [Page 4]
+Scudder & Lucente         Expires 9 August 2024                 [Page 4]
 
-Internet-Draft            BMP Peer Up Namespace             October 2023
+Internet-Draft            BMP Peer Up Namespace            February 2024
 
 
 4.  IANA Considerations
@@ -277,9 +277,9 @@ Internet-Draft            BMP Peer Up Namespace             October 2023
 
 
 
-Scudder & Lucente         Expires 26 April 2024                 [Page 5]
+Scudder & Lucente         Expires 9 August 2024                 [Page 5]
 
-Internet-Draft            BMP Peer Up Namespace             October 2023
+Internet-Draft            BMP Peer Up Namespace            February 2024
 
 
                   +=======+=============+===============+
@@ -333,9 +333,9 @@ Internet-Draft            BMP Peer Up Namespace             October 2023
 
 
 
-Scudder & Lucente         Expires 26 April 2024                 [Page 6]
+Scudder & Lucente         Expires 9 August 2024                 [Page 6]
 
-Internet-Draft            BMP Peer Up Namespace             October 2023
+Internet-Draft            BMP Peer Up Namespace            February 2024
 
 
    [RFC8671]  Evens, T., Bayraktar, S., Lucente, P., Mi, P., and S.
@@ -389,4 +389,4 @@ Authors' Addresses
 
 
 
-Scudder & Lucente         Expires 26 April 2024                 [Page 7]
+Scudder & Lucente         Expires 9 August 2024                 [Page 7]
