@@ -70,7 +70,7 @@ Internet-Draft            BMP Peer Up Namespace                June 2024
 Table of Contents
 
    1.  Introduction  . . . . . . . . . . . . . . . . . . . . . . . .   2
-     1.1.  Requirements Language . . . . . . . . . . . . . . . . . .   2
+     1.1.  Requirements Language . . . . . . . . . . . . . . . . . .   3
    2.  String Definition . . . . . . . . . . . . . . . . . . . . . .   3
    3.  Changes to existing RFCs  . . . . . . . . . . . . . . . . . .   3
      3.1.  Revision to Information TLV, Renamed as Initiation
@@ -79,9 +79,11 @@ Table of Contents
      3.3.  Definition of Peer Up Information TLV . . . . . . . . . .   4
    4.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .   5
    5.  Security Considerations . . . . . . . . . . . . . . . . . . .   6
-   6.  Acknowledgements  . . . . . . . . . . . . . . . . . . . . . .   6
-   7.  Normative References  . . . . . . . . . . . . . . . . . . . .   6
-   Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .   7
+   6.  Implementation status - RFC EDITOR: REMOVE BEFORE
+           PUBLICATION . . . . . . . . . . . . . . . . . . . . . . .   7
+   7.  Acknowledgements  . . . . . . . . . . . . . . . . . . . . . .   7
+   8.  Normative References  . . . . . . . . . . . . . . . . . . . .   7
+   Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .   8
 
 1.  Introduction
 
@@ -98,13 +100,11 @@ Table of Contents
    implementations of [RFC7854], [RFC8671] and [RFC9069] also comply
    with this specification.
 
-1.1.  Requirements Language
 
-   The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
-   "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and
-   "OPTIONAL" in this document are to be interpreted as described in BCP
-   14 [RFC2119] [RFC8174] when, and only when, they appear in all
-   capitals, as shown here.
+
+
+
+
 
 
 
@@ -113,6 +113,14 @@ Scudder & Lucente       Expires 13 December 2024                [Page 2]
 
 Internet-Draft            BMP Peer Up Namespace                June 2024
 
+
+1.1.  Requirements Language
+
+   The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
+   "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and
+   "OPTIONAL" in this document are to be interpreted as described in BCP
+   14 [RFC2119] [RFC8174] when, and only when, they appear in all
+   capitals, as shown here.
 
 2.  String Definition
 
@@ -152,14 +160,6 @@ Internet-Draft            BMP Peer Up Namespace                June 2024
       strings are included, their ordering MUST be preserved when they
       are reported.
 
-   *  Type = 1: sysDescr.  The Information field contains an ASCII
-      string whose value MUST be set to be equal to the value of the
-      sysDescr MIB-II [RFC1213] object.
-
-   *  Type = 2: sysName.  The Information field contains an ASCII string
-      whose value MUST be set to be equal to the value of the sysName
-      MIB-II [RFC1213] object.
-
 
 
 
@@ -169,6 +169,14 @@ Scudder & Lucente       Expires 13 December 2024                [Page 3]
 
 Internet-Draft            BMP Peer Up Namespace                June 2024
 
+
+   *  Type = 1: sysDescr.  The Information field contains an ASCII
+      string whose value MUST be set to be equal to the value of the
+      sysDescr MIB-II [RFC1213] object.
+
+   *  Type = 2: sysName.  The Information field contains an ASCII string
+      whose value MUST be set to be equal to the value of the sysName
+      MIB-II [RFC1213] object.
 
 3.2.  Revision to Peer Up Notification
 
@@ -207,6 +215,17 @@ Internet-Draft            BMP Peer Up Namespace                June 2024
          or table name (e.g., RD instance name) being conveyed.  The
          string size MUST be within the range of 1 to 255 bytes.
 
+
+
+
+
+
+
+Scudder & Lucente       Expires 13 December 2024                [Page 4]
+
+Internet-Draft            BMP Peer Up Namespace                June 2024
+
+
       -  Type = 4: Admin Label.  The Information field contains a free-
          form UTF-8 string whose byte length is given by the Information
          Length field.  The value is administratively assigned.  There
@@ -218,13 +237,6 @@ Internet-Draft            BMP Peer Up Namespace                June 2024
 
    *  Information (variable): Information about the monitored router,
       according to the type.
-
-
-
-Scudder & Lucente       Expires 13 December 2024                [Page 4]
-
-Internet-Draft            BMP Peer Up Namespace                June 2024
-
 
 4.  IANA Considerations
 
@@ -249,6 +261,27 @@ Internet-Draft            BMP Peer Up Namespace                June 2024
 
    Initial values for this registry are:
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Scudder & Lucente       Expires 13 December 2024                [Page 5]
+
+Internet-Draft            BMP Peer Up Namespace                June 2024
+
+
                 +=======+================+===============+
                 |  Type |  Description   |   Reference   |
                 +=======+================+===============+
@@ -270,17 +303,6 @@ Internet-Draft            BMP Peer Up Namespace                June 2024
    IANA is also requested to rename the existing "BMP Initiation and
    Peer Up Information TLVs" registry to "BMP Initiation Information
    TLVs" and seed it with the following values:
-
-
-
-
-
-
-
-Scudder & Lucente       Expires 13 December 2024                [Page 5]
-
-Internet-Draft            BMP Peer Up Namespace                June 2024
-
 
                   +=======+=============+===============+
                   |  Type | Description |   Reference   |
@@ -305,11 +327,43 @@ Internet-Draft            BMP Peer Up Namespace                June 2024
    This rearrangement of deck chairs does not change the underlying
    security issues inherent in the existing [RFC7854].
 
-6.  Acknowledgements
+
+
+
+
+
+
+Scudder & Lucente       Expires 13 December 2024                [Page 6]
+
+Internet-Draft            BMP Peer Up Namespace                June 2024
+
+
+6.  Implementation status - RFC EDITOR: REMOVE BEFORE PUBLICATION
+
+   This section records the status of known implementations of the
+   protocol defined by this specification at the time of posting of this
+   Internet-Draft.  The description of implementations in this section
+   is intended to assist the IETF in its decision processes in
+   progressing drafts to RFCs.  Please note that the listing of any
+   individual implementation here does not imply endorsement by the
+   IETF.  Furthermore, no effort has been spent to verify the
+   information presented here that was supplied by IETF contributors.
+   This is not intended as, and must not be construed to be, a catalog
+   of available implementations or their features.  Readers are advised
+   to note that other implementations may exist.
+
+   As of today these vendors have produced an implementation of the BMP
+   Peer Up Namespace:
+
+   *  FRRouting
+
+   *  pmacct
+
+7.  Acknowledgements
 
    The authors would like to thank Maxence Younsi for his review.
 
-7.  Normative References
+8.  Normative References
 
    [RFC1213]  McCloghrie, K. and M. Rose, "Management Information Base
               for Network Management of TCP/IP-based internets: MIB-II",
@@ -333,7 +387,9 @@ Internet-Draft            BMP Peer Up Namespace                June 2024
 
 
 
-Scudder & Lucente       Expires 13 December 2024                [Page 6]
+
+
+Scudder & Lucente       Expires 13 December 2024                [Page 7]
 
 Internet-Draft            BMP Peer Up Namespace                June 2024
 
@@ -389,4 +445,4 @@ Authors' Addresses
 
 
 
-Scudder & Lucente       Expires 13 December 2024                [Page 7]
+Scudder & Lucente       Expires 13 December 2024                [Page 8]
