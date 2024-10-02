@@ -112,9 +112,8 @@ ipr="trust200902" updates="7854, 8671, 9069" consensus="true">
 <t>
 	This document updates RFC 7854 by creating an independent namespace for
 	the Peer Up message. It also updates RFC 8671 and RFC 9069 by moving the
-	defined codepoints in the newly introduced registry. The changes in this
-	document are formal only, compliant implementations of RFC 7854, RFC 8671
-	and RFC 9069 also comply with this specification.
+	defined codepoints in the newly introduced registry. Compliant implementations
+	of RFC 7854, RFC 8671 and RFC 9069 also comply with this specification.
 </t>
 </abstract>
 
@@ -136,9 +135,8 @@ ipr="trust200902" updates="7854, 8671, 9069" consensus="true">
 	<!--We also supply a definition of "string" for 
 	convenience, since TLVs from multiple different registries include a string. -->
 <t>
-    The changes in this document are formal only, compliant implementations
-    of <xref target="RFC7854"/>, <xref target="RFC8671"/> and <xref target="RFC9069"/>
-    also comply with this specification.
+	Compliant implementations of <xref target="RFC7854"/>, <xref target="RFC8671"/>
+	and <xref target="RFC9069"/> also comply with this specification.
 </t>
       <section title="Requirements Language">
         <t>The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL
@@ -381,9 +379,8 @@ ipr="trust200902" updates="7854, 8671, 9069" consensus="true">
 
 <section anchor="Security" title="Security Considerations">
 <t>
-	This rearrangement of deck chairs does not change the
-	underlying security issues inherent in the existing <xref
-	target="RFC7854"/>.
+	This document does not alter the security considerations of <xref
+	target="RFC7854"/> which continue to apply.
 </t>
 </section>
 
