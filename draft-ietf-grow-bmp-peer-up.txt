@@ -75,15 +75,15 @@ Table of Contents
    3.  Changes to existing RFCs  . . . . . . . . . . . . . . . . . .   3
      3.1.  Revision to Information TLV, Renamed as Initiation
            Information TLV . . . . . . . . . . . . . . . . . . . . .   3
-     3.2.  Revision to Peer Up Notification  . . . . . . . . . . . .   4
+     3.2.  Revision to Peer Up Notification  . . . . . . . . . . . .   3
      3.3.  Definition of Peer Up Information TLV . . . . . . . . . .   4
-   4.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .   5
+   4.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .   4
    5.  Security Considerations . . . . . . . . . . . . . . . . . . .   6
    6.  Implementation status - RFC EDITOR: REMOVE BEFORE
-           PUBLICATION . . . . . . . . . . . . . . . . . . . . . . .   7
-   7.  Acknowledgements  . . . . . . . . . . . . . . . . . . . . . .   7
+           PUBLICATION . . . . . . . . . . . . . . . . . . . . . . .   6
+   7.  Acknowledgements  . . . . . . . . . . . . . . . . . . . . . .   6
    8.  Normative References  . . . . . . . . . . . . . . . . . . . .   7
-   Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .   8
+   Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .   7
 
 1.  Introduction
 
@@ -131,21 +131,7 @@ Internet-Draft            BMP Peer Up Namespace             October 2024
 
 3.  Changes to existing RFCs
 
-   We update [RFC7854] as follows:
-
-   *  The "Information TLV" of section 4.4, that was shared between the
-      Initiation and Peer Up message types, is renamed as the
-      "Initiation Information TLV", and is only relevant to the
-      Initiation message type.
-
-   *  A "Peer Up Information TLV" is defined, and is relevant to the
-      Peer Up message type.
-
-   *  A "BMP Peer Up Information TLVs" registry is is created, seeded
-      with the Peer Up Information TLV.
-
-   Other than as summarized above, and detailed below, there are no
-   other changes.
+   [RFC7854] is updated as detailed in the following sub-sections.
 
 3.1.  Revision to Information TLV, Renamed as Initiation Information TLV
 
@@ -157,18 +143,8 @@ Internet-Draft            BMP Peer Up Namespace             October 2024
 
    *  Type = 0: String.  The Information field contains a string
       (Section 2).  The value is administratively assigned.  If multiple
-      strings are included, their ordering MUST be preserved when they
-      are reported.
-
-
-
-
-
-
-Scudder & Lucente         Expires 5 April 2025                  [Page 3]
-
-Internet-Draft            BMP Peer Up Namespace             October 2024
-
+      string TLVs are included, their ordering MUST be preserved when
+      they are reported.
 
    *  Type = 1: sysDescr.  The Information field contains an ASCII
       string whose value MUST be set to be equal to the value of the
@@ -183,6 +159,16 @@ Internet-Draft            BMP Peer Up Namespace             October 2024
    The final paragraph of section 4.10 of [RFC7854] references the
    Information TLV (which is revised above (Section 3.1)).  That
    paragraph is replaced by the following:
+
+
+
+
+
+
+Scudder & Lucente         Expires 5 April 2025                  [Page 3]
+
+Internet-Draft            BMP Peer Up Namespace             October 2024
+
 
    *  Information: Information about the peer, using the Peer Up
       Information TLV format defined below (Section 3.3).  The String
@@ -202,8 +188,7 @@ Internet-Draft            BMP Peer Up Namespace             October 2024
      ~                                                               ~
      +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 
-   *  Information Type (2 bytes): Type of information provided.  Defined
-      types are:
+   *  Information Type (2 bytes): defined types are:
 
       -  Type = 0: String.  The Information field contains a string
          (Section 2).  The value is administratively assigned.  If
@@ -214,17 +199,6 @@ Internet-Draft            BMP Peer Up Namespace             October 2024
          UTF-8 string whose value MUST be equal to the value of the VRF
          or table name (e.g., RD instance name) being conveyed.  The
          string size MUST be within the range of 1 to 255 bytes.
-
-
-
-
-
-
-
-Scudder & Lucente         Expires 5 April 2025                  [Page 4]
-
-Internet-Draft            BMP Peer Up Namespace             October 2024
-
 
       -  Type = 4: Admin Label.  The Information field contains a free-
          form UTF-8 string whose byte length is given by the Information
@@ -245,6 +219,13 @@ Internet-Draft            BMP Peer Up Namespace             October 2024
 
    Registration procedures for this registry are:
 
+
+
+Scudder & Lucente         Expires 5 April 2025                  [Page 4]
+
+Internet-Draft            BMP Peer Up Namespace             October 2024
+
+
                 +=============+==========================+
                 |    Range    | Registration Procedures  |
                 +=============+==========================+
@@ -260,27 +241,6 @@ Internet-Draft            BMP Peer Up Namespace             October 2024
                                  Table 1
 
    Initial values for this registry are:
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Scudder & Lucente         Expires 5 April 2025                  [Page 5]
-
-Internet-Draft            BMP Peer Up Namespace             October 2024
-
 
                 +=======+================+===============+
                 |  Type |  Description   |   Reference   |
@@ -304,6 +264,24 @@ Internet-Draft            BMP Peer Up Namespace             October 2024
    Peer Up Information TLVs" registry to "BMP Initiation Information
    TLVs" and seed it with the following values:
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+Scudder & Lucente         Expires 5 April 2025                  [Page 5]
+
+Internet-Draft            BMP Peer Up Namespace             October 2024
+
+
                   +=======+=============+===============+
                   |  Type | Description |   Reference   |
                   +=======+=============+===============+
@@ -326,17 +304,6 @@ Internet-Draft            BMP Peer Up Namespace             October 2024
 
    This document does not alter the security considerations of [RFC7854]
    which continue to apply.
-
-
-
-
-
-
-
-Scudder & Lucente         Expires 5 April 2025                  [Page 6]
-
-Internet-Draft            BMP Peer Up Namespace             October 2024
-
 
 6.  Implementation status - RFC EDITOR: REMOVE BEFORE PUBLICATION
 
@@ -363,6 +330,14 @@ Internet-Draft            BMP Peer Up Namespace             October 2024
 
    The authors would like to thank Maxence Younsi for his review.
 
+
+
+
+Scudder & Lucente         Expires 5 April 2025                  [Page 6]
+
+Internet-Draft            BMP Peer Up Namespace             October 2024
+
+
 8.  Normative References
 
    [RFC1213]  McCloghrie, K. and M. Rose, "Management Information Base
@@ -383,16 +358,6 @@ Internet-Draft            BMP Peer Up Namespace             October 2024
    [RFC8174]  Leiba, B., "Ambiguity of Uppercase vs Lowercase in RFC
               2119 Key Words", BCP 14, RFC 8174, DOI 10.17487/RFC8174,
               May 2017, <https://www.rfc-editor.org/info/rfc8174>.
-
-
-
-
-
-
-Scudder & Lucente         Expires 5 April 2025                  [Page 7]
-
-Internet-Draft            BMP Peer Up Namespace             October 2024
-
 
    [RFC8671]  Evens, T., Bayraktar, S., Lucente, P., Mi, P., and S.
               Zhuang, "Support for Adj-RIB-Out in the BGP Monitoring
@@ -424,25 +389,4 @@ Authors' Addresses
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Scudder & Lucente         Expires 5 April 2025                  [Page 8]
+Scudder & Lucente         Expires 5 April 2025                  [Page 7]

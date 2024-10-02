@@ -160,24 +160,7 @@ ipr="trust200902" updates="7854, 8671, 9069" consensus="true">
 
 <section title="Changes to existing RFCs">
 <t>
-    We update <xref target="RFC7854"/> as follows:
-    <list style="symbols">
-    <t>
-    	The "Information TLV" of section 4.4, that was shared between the
-    	Initiation and Peer Up message types, is renamed as the "Initiation
-    	Information TLV", and is only relevant to the Initiation message type.
-    </t>
-    <t>
-    	A "Peer Up Information TLV" is defined, and is relevant to the
-    	Peer Up message type.
-    </t>
-    <t>
-	A "BMP Peer Up Information TLVs" registry is is created, seeded
-	with the Peer Up Information TLV.
-    </t>
-    </list> 
-    Other than as summarized above, and detailed below, there are no
-    other changes.
+   <xref target="RFC7854"/> is updated as detailed in the following sub-sections.
 </t>
 
 <section anchor="init_info_tlv"
@@ -193,8 +176,8 @@ ipr="trust200902" updates="7854, 8671, 9069" consensus="true">
 	<t>
 		Type = 0: String.  The Information field contains a <xref
 		target="string">string</xref>.  The value is administratively
-		assigned.  If multiple strings are included, their ordering MUST be
-		preserved when they are reported.
+		assigned.  If multiple string TLVs are included, their ordering
+		MUST be preserved when they are reported.
 	</t>
 
 	<t>
@@ -250,8 +233,7 @@ ipr="trust200902" updates="7854, 8671, 9069" consensus="true">
 <t>
 <list style="symbols">
 <t>
-	 Information Type (2 bytes): Type of information provided.
-	 Defined types are:
+	 Information Type (2 bytes): defined types are:
 <list style="symbols">
 <t>
 	 Type = 0: String.  The Information field contains a <xref
