@@ -102,12 +102,12 @@ ipr="trust200902" updates="7854, 8671, 9069" consensus="true">
 
 <abstract>
 <t>
-	RFC 7854, BMP, uses different message types for different purposes.
-	Most of these are Type, Length, Value (TLV) structured. One message
-	type, the Peer Up message, lacks a set of TLVs defined for its use,
-	instead sharing a namespace with the Initiation message. Subsequent
-	experience has shown that this namespace sharing was a mistake, as it
-	hampers the extension of the protocol.
+	RFC 7854, BGP Monitoring Protocol, uses different message types for
+	different purposes. Most of these are Type, Length, Value (TLV)
+	structured. One message type, the Peer Up message, lacks a set of
+	TLVs defined for its use, instead sharing a namespace with the Initiation
+	message. Subsequent experience has shown that this namespace sharing was
+	a mistake, as it hampers the extension of the protocol.
 </t>
 <t>
 	This document updates RFC 7854 by creating an independent namespace for
@@ -127,9 +127,9 @@ ipr="trust200902" updates="7854, 8671, 9069" consensus="true">
 	types. With the exception of the Route Monitoring message type, these
 	messages are TLV-structured. Most message types have distinct
 	namespaces and IANA registries. However, the namespace of the Peer Up
-	message overlaps that of the Initiation message. As the BMP protocol
-	has been extended, this oversight has become problematic. In this
-	document, we create a distinct namespace for the Peer Up message to
+	message overlaps that of the Initiation message. As the BGP Monitoring
+	Protocol has been extended, this oversight has become problematic. In
+	this document, we create a distinct namespace for the Peer Up message to
 	eliminate this overlap, and create the corresponding missing registry. 
 </t>
 	<!--We also supply a definition of "string" for 
